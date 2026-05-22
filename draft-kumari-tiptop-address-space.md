@@ -8,18 +8,18 @@ number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: TIPTOP
+area: "Internet"
+workgroup: "Taking IP To Other Planets"
 keyword:
  - space
  - address_policy
 venue:
-  group: WG
-  type: Working Group
-  mail: deepspace@ietf.org
-#  arch: https://example.com/WG
-  github: wkumari/draft-kumari-tiptop-address-space
-  latest: https://example.com/LATEST
+  group: "Taking IP To Other Planets"
+  type: "Working Group"
+  mail: "deepspace@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/deepspace"
+  github: "wkumari/draft-kumari-tiptop-address-space"
+  latest: "https://wkumari.github.io/draft-kumari-tiptop-address-space/draft-kumari-tiptop-address-space.html"
 
 author:
   -
