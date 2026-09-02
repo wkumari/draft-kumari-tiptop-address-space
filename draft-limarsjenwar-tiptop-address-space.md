@@ -20,24 +20,24 @@ pi: [toc, sortrefs, symrefs]
 
 author:
   -
-    ins: R. Atkinson
-    name: Ran Atkinson
-    email: rja.lists@gmail.com
+    ins: T. Li
+    name: Tony Li
+    org: Hewlett Packard Enterprise
+    email: tony.li@tony.li
   -
     ins: M. Eubanks
     name: Marshall Eubanks
     org: Space Initiatives
     email: tme@space-initiatives.com
   -
+    ins: R. Atkinson
+    name: Ran Atkinson
+    email: rja.lists@gmail.com
+  -
     ins: W. Kumari
     name: Warren Kumari
     org: Google, Inc.
     email: warren@kumari.net
-  -
-    ins: T. Li
-    name: Tony Li
-    org: Hewlett Packard Enterprise
-    email: tony.li@tony.li
   -
     ins: J. Linkova
     name: Jen Linkova
