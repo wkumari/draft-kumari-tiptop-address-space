@@ -1,7 +1,7 @@
 ---
 title: IPv6 Address Space for Space
 abbrev: IP Space for Space
-docname: draft-limarsjenwar-deepspace-address-space-00
+docname: draft-limarsjenwar-tiptop-address-space-00
 category: std
 
 ipr: trust200902
