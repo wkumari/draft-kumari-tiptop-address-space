@@ -1,0 +1,305 @@
+
+
+
+
+TIPTOP Working Group                                               T. Li
+Internet-Draft                                Hewlett Packard Enterprise
+Intended status: Standards Track                              M. Eubanks
+Expires: 6 March 2027                                  Space Initiatives
+                                                             R. Atkinson
+                                                                        
+                                                               W. Kumari
+                                                            Google, Inc.
+                                                              J. Linkova
+                                                             Google, LLC
+                                                        2 September 2026
+
+
+                      IPv6 Address Space for Space
+             draft-limarsjenwar-tiptop-address-space-latest
+
+Abstract
+
+   IP communication in space environments is fundamentally different
+   from terrestrial communication; a primary difference is the
+   likelihood of long round-trip times, potentially minutes or even
+   hours, depending on the distance between the endpoints.
+
+   Existing protocols and IP stacks are largely designed for low-latency
+   terrestrial environments and may fail (e.g., standard TCP handshakes
+   timing out) unless they can readily identify that communication is
+   taking place with a peer in a space environment and adjust their
+   behavior accordingly.  Furthermore, without a structured address
+   allocation plan, early space missions risk creating an unaggregated
+   patchwork of prefixes—repeating the historical operational scaling
+   issues seen in terrestrial networks.
+
+   This document requests that the IANA allocate a single dedicated
+   block of IPv6 address space specifically for use in space
+   environments and manages suballocations from that block for celestial
+   bodies, as needed.  The Number Resource Organization (NRO) will
+   determine how to allocate and assign address resources from the
+   celestial bodies blocks, with the understanding that topological
+   address aggregation is critical for routing scalability and
+   operational efficiency.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 6 March 2027.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  Routing Scalability and Topological Aggregation
+   4.  Address Administration and Allocation Model
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
+   Acknowledgments
+   Authors' Addresses
+
+1.  Introduction
+
+   The exploration and operational utilization of outer space depends
+   heavily upon reliable communications infrastructure and increasingly
+   relies on the Internet Protocol suite
+   [I-D.many-tiptop-ip-architecture].
+
+   However, IP communication in space environments is fundamentally
+   different from terrestrial communication.  For example, the speed-of-
+   light round-trip time (RTT) between Earth and Mars ranges from
+   roughly 6 minutes to over 40 minutes.  Traditional interactive
+   transport connections (such as standard TCP handshakes and
+   conservative retransmission timers) fail in these high-latency,
+   intermittently connected environments.  For an IP stack or
+   application to know that a given flow requires specialized transport
+   parameters, timer adjustments, or delay-tolerant convergence
+   protocols, it needs a reliable, lightweight mechanism to determine
+   that the remote destination resides in a space environment.
+
+   By establishing a dedicated block of IPv6 address space specifically
+   for space environments, endpoint IP stacks and intermediate gateways
+   can immediately identify when traffic is bound for deep space and
+   adjust their behavior accordingly.
+
+   Additionally, addressing in space must be structured proactively to
+   avoid the routing fragmentation that has historically plagued
+   terrestrial networks.  In the early days of IPv4 prior to the
+   adoption of Classless Inter-Domain Routing (CIDR) [RFC1518], address
+   space was handed out in a disjointed manner, creating a sprawling,
+   unaggregated global routing table colloquially referred to as "the
+   swamp."  If addresses for space missions continue to be assigned ad-
+   hoc on a per-mission basis, the resulting patchwork will prevent
+   route aggregation and impose severe routing table overhead on
+   resource-constrained space hardware.
+
+   This document requests that the IANA allocate a single dedicated
+   block of IPv6 address space for space environments, and charges the
+   Number Resource Organization (NRO) with determining how to allocate
+   and assign address resources from this block, ensuring that
+   topological aggregation remains a primary design requirement.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  Routing Scalability and Topological Aggregation
+
+   Address aggregation allows the combining of multiple topologically
+   related address prefixes into a single, less-specific route
+   advertisement.  Carrying fewer prefixes in routing and forwarding
+   tables minimizes protocol overhead, conserves memory, and saves
+   router CPU cycles—all resources that are at a premium on spaceborne
+   systems.
+
+   To design an effective aggregation architecture, address plans must
+   reflect the physical topology of the network.  Terrestrial Internet
+   topology shows dense connectivity on land masses where links are
+   relatively inexpensive and simple to deploy, interconnected by a
+   smaller number of long-distance transoceanic conduits.  By analogy,
+   communications infrastructure in space will exhibit high density
+   within local environments (such as on and around individual celestial
+   bodies) and far sparser links across interplanetary distances.
+
+   Consequently, route aggregation is most naturally and effectively
+   performed around celestial bodies.  Within the dedicated space
+   address block, dedicated blocks are suballocated for celestial
+   bodies, as needed.  Address assignment policies MUST prioritize
+   topological aggregation at the celestial body level, and, whenever
+   possible, hierarchically below (e.g., local surface regions, orbital
+   regimes, and localized operator constellations), ensuring that
+   interplanetary transit gateways need only advertise and route coarse
+   summary prefixes.
+
+4.  Address Administration and Allocation Model
+
+   Administration of space IPv6 resources should build upon the
+   established principles and operational expertise of the Internet
+   numbers registry system [RFC8720].
+
+   Under this model:
+
+   1.  *IANA Allocation*: The IANA will allocate a single dedicated
+       block of IPv6 address space for space environments.  The IANA
+       also manages suballocations for celestial bodies from that block.
+
+   2.  *Registry Distribution*: The Number Resource Organization (NRO)
+       will determine how to structure, assign, and distribute address
+       blocks from the celestial bodies space allocations.
+
+   3.  *Policy and Aggregation*: The registry system will establish
+       allocation policies for space operators, network service
+       providers, and research organizations, ensuring that address
+       assignments preserve strict topological aggregation at the
+       celestial body level and, whenever possible, below.
+
+   Leveraging the existing registry framework allows the community to
+   utilize proven policy development processes, governance structures,
+   and well-understood allocation mechanisms, while ensuring that the
+   physical and topological constraints of space routing are met.
+
+   Delegation of address space by the IANA is subject to standard
+   stewardship principles [RFC1881]: if delegated space is mismanaged,
+   the IANA retains the authority to revoke delegations in accordance
+   with established registry operational guidelines.
+
+5.  Security Considerations
+
+   Assigning a dedicated IPv6 block for space environments does not
+   inherently introduce new security vulnerabilities to the IP
+   architecture.  Additionally, some of existing routing security
+   mechanisms might be unsuitable for space communications, while some
+   others (such as boundary filterings) are still applicable.  Exact
+   security mechanisms applicable for space environments are outside of
+   scope of this document.
+
+6.  IANA Considerations
+
+   This entire document relates to IANA numbering assignments.
+
+   The IANA is requested to allocate a single dedicated block of IPv6
+   address space specifically for use in space environments. (*TBA
+   (furry@): /3?*) The IANA is requested to suballocate /X (**we need to
+   specify, I guess?) prefixes for the following celestial bodies:
+
+   *  The moon and its environs.
+
+   *  Earth's Lagrange points
+
+   When space communication is extended to other bodies not listed
+   above, requests for sunsequent allocations will be made to the IANA.
+
+   The NRO will determine how to allocate and assign addresses from
+   those blocks in accordance with the aggregation principles outlined
+   in this document.
+
+7.  References
+
+7.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+7.2.  Informative References
+
+   [I-D.many-tiptop-ip-architecture]
+              Blanchet, M., Eddy, W., and T. Li, "An Architecture for IP
+              in Deep Space", Work in Progress, Internet-Draft, draft-
+              many-tiptop-ip-architecture-03, 2 March 2026,
+              <https://datatracker.ietf.org/doc/html/draft-many-tiptop-
+              ip-architecture-03>.
+
+   [RFC1518]  Rekhter, Y. and T. Li, "An Architecture for IP Address
+              Allocation with CIDR", RFC 1518, DOI 10.17487/RFC1518,
+              September 1993, <https://www.rfc-editor.org/rfc/rfc1518>.
+
+   [RFC1881]  IAB and IESG, "IPv6 Address Allocation Management",
+              RFC 1881, DOI 10.17487/RFC1881, December 1995,
+              <https://www.rfc-editor.org/rfc/rfc1881>.
+
+   [RFC8720]  Housley, R., Ed. and O. Kolkman, Ed., "Principles for
+              Operation of Internet Assigned Numbers Authority (IANA)
+              Registries", RFC 8720, DOI 10.17487/RFC8720, February
+              2020, <https://www.rfc-editor.org/rfc/rfc8720>.
+
+Acknowledgments
+
+   The authors would like to thank Alejandro Acosta, Marc Blanchet,
+   Kasey Kierra, Michael Richardson and many other members of the TIPTOP
+   working group for their feedback and suggestions on this document,
+   and for their work on the broader topic of IP communication in space
+   environments.  In addition, the authors would sincerely like to thank
+   Kim Davies, John Curran and Geoff Huston for helping us understand
+   the history, complexity and sensitivities around IP address
+   governance.  We would also like to thank the members of the RIPE
+   Address Policy Working Group for their feedback and suggestions on
+   this topic.  One of the authors (Warren) has an awful memory for
+   names and faces, and is embarrassed that he can't remember who all he
+   spoke to about this topic, but he is grateful to everyone who
+   provided feedback and suggestions - please drop me a note and I'll be
+   happy to add you to this list.
+
+Authors' Addresses
+
+   Tony Li
+   Hewlett Packard Enterprise
+   Email: tony.li@tony.li
+
+
+   Marshall Eubanks
+   Space Initiatives
+   Email: tme@space-initiatives.com
+
+
+   Ran Atkinson
+   Email: rja.lists@gmail.com
+
+
+   Warren Kumari
+   Google, Inc.
+   Email: warren@kumari.net
+
+
+   Jen Linkova
+   Google, LLC
+   Email: furry13@gmail.com

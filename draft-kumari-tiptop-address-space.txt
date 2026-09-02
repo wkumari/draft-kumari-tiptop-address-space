@@ -2,11 +2,11 @@
 
 
 
-TIPTOP                                                         W. Kumari
+Taking IP To Other Planets                                     W. Kumari
 Internet-Draft                                              Google, Inc.
 Intended status: Informational                                J. Linkova
-Expires: 23 November 2026                                    Google, LLC
-                                                             22 May 2026
+Expires: 6 March 2027                                        Google, LLC
+                                                        2 September 2026
 
 
                         Address Space for Space
@@ -74,14 +74,15 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-kumari-tiptop-
-   address-space/.
+   https://wkumari.github.io/draft-kumari-tiptop-address-space/draft-
+   kumari-tiptop-address-space.html.  Status information for this
+   document may be found at https://datatracker.ietf.org/doc/draft-
+   kumari-tiptop-address-space/.
 
-   Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:deepspace@ietf.org), which is archived at
-   https://mailarchive.ietf.org/arch/browse/deepspace/.  Subscribe at
-   https://www.ietf.org/mailman/listinfo/deepspace/.
+   Discussion of this document takes place on the Taking IP To Other
+   Planets Working Group mailing list (mailto:deepspace@ietf.org), which
+   is archived at https://mailarchive.ietf.org/arch/browse/deepspace.
+   Subscribe at https://www.ietf.org/mailman/listinfo/deepspace/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/wkumari/draft-kumari-tiptop-address-space.
@@ -101,7 +102,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 November 2026.
+   This Internet-Draft will expire on 6 March 2027.
 
 Copyright Notice
 
