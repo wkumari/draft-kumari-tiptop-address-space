@@ -1,7 +1,7 @@
 ---
 title: IPv6 Address Space for Space
 abbrev: IP Space for Space
-docname: draft-limarsjenwar-tiptop-address-space-00
+docname: draft-limarsjenwar-tiptop-address-space-latest
 category: std
 
 ipr: trust200902
@@ -30,15 +30,19 @@ author:
     org: Space Initiatives
     email: tme@space-initiatives.com
   -
-    ins: J. Linkova
-    name: Jen Linkova
-    org: Google, LLC
-    email: furry13@gmail.com
+    ins: R. Atkinson
+    name: Ran Atkinson
+    email: rja.lists@gmail.com
   -
     ins: W. Kumari
     name: Warren Kumari
     org: Google, Inc.
     email: warren@kumari.net
+  -
+    ins: J. Linkova
+    name: Jen Linkova
+    org: Google, LLC
+    email: furry13@gmail.com
 
 normative:
   RFC2119:
@@ -56,7 +60,8 @@ IP communication in space environments is fundamentally different from terrestri
 
 Existing protocols and IP stacks are largely designed for low-latency terrestrial environments and may fail (e.g., standard TCP handshakes timing out) unless they can readily identify that communication is taking place with a peer in a space environment and adjust their behavior accordingly. Furthermore, without a structured address allocation plan, early space missions risk creating an unaggregated patchwork of prefixes—repeating the historical operational scaling issues seen in terrestrial networks.
 
-This document requests that the IANA allocate a single dedicated block of IPv6 address space specifically for use in space environments. The Number Resource Organization (NRO) will determine how to allocate and assign address resources from this block, with the understanding that topological address aggregation at the celestial body level, and below, is critical for routing scalability and operational efficiency.
+This document requests that the IANA allocate a single dedicated block of IPv6 address space specifically for use in space environments and manages suballocations from that block for celestial bodies, as needed.
+The Number Resource Organization (NRO) will determine how to allocate and assign address resources from the celestial bodies blocks, with the understanding that topological address aggregation is critical for routing scalability and operational efficiency.
 
 --- middle
 
@@ -82,7 +87,9 @@ Address aggregation allows the combining of multiple topologically related addre
 
 To design an effective aggregation architecture, address plans must reflect the physical topology of the network. Terrestrial Internet topology shows dense connectivity on land masses where links are relatively inexpensive and simple to deploy, interconnected by a smaller number of long-distance transoceanic conduits. By analogy, communications infrastructure in space will exhibit high density within local environments (such as on and around individual celestial bodies) and far sparser links across interplanetary distances.
 
-Consequently, route aggregation is most naturally and effectively performed around celestial bodies. Within the dedicated space address block, address assignment policies MUST prioritize topological aggregation at the celestial body level, and hierarchically below (e.g., local surface regions, orbital regimes, and localized operator constellations), ensuring that interplanetary transit gateways need only advertise and route coarse summary prefixes.
+Consequently, route aggregation is most naturally and effectively performed around celestial bodies.
+Within the dedicated space address block, dedicated blocks are suballocated for celestial bodies, as needed.
+Address assignment policies MUST prioritize topological aggregation at the celestial body level, and, whenever possible, hierarchically below (e.g., local surface regions, orbital regimes, and localized operator constellations), ensuring that interplanetary transit gateways need only advertise and route coarse summary prefixes.
 
 # Address Administration and Allocation Model
 
@@ -90,9 +97,9 @@ Administration of space IPv6 resources should build upon the established princip
 
 Under this model:
 
-1. **IANA Allocation**: The IANA will allocate a single dedicated block of IPv6 address space for space environments.
-2. **Registry Distribution**: The Number Resource Organization (NRO) will determine how to structure, assign, and distribute address blocks from this dedicated space allocation.
-3. **Policy and Aggregation**: The registry system will establish allocation policies for space operators, network service providers, and research organizations, ensuring that address assignments preserve strict topological aggregation at the celestial body level and below.
+1. **IANA Allocation**: The IANA will allocate a single dedicated block of IPv6 address space for space environments. The IANA also manages suballocations for celestial bodies from that block.
+2. **Registry Distribution**: The Number Resource Organization (NRO) will determine how to structure, assign, and distribute address blocks from the celestial bodies space allocations.
+3. **Policy and Aggregation**: The registry system will establish allocation policies for space operators, network service providers, and research organizations, ensuring that address assignments preserve strict topological aggregation at the celestial body level and, whenever possible,  below.
 
 Leveraging the existing registry framework allows the community to utilize proven policy development processes, governance structures, and well-understood allocation mechanisms, while ensuring that the physical and topological constraints of space routing are met.
 
@@ -100,19 +107,37 @@ Delegation of address space by the IANA is subject to standard stewardship princ
 
 # Security Considerations
 
-Assigning a dedicated IPv6 block for space environments does not inherently introduce new security vulnerabilities to the IP architecture. However, network operators and endpoints MUST apply appropriate boundary filtering, routing authentication (e.g., RPKI), and transport-layer cryptographic protections appropriate for long-delay, high-threat space communications.
+Assigning a dedicated IPv6 block for space environments does not inherently introduce new security vulnerabilities to the IP architecture.
+Additionally, some of existing routing security mechanisms might be unsuitable for space communications, while some others (such as boundary filterings) are still applicable.
+Exact security mechanisms applicable for space environments are outside of scope of this document.
 
 # IANA Considerations
 
 This entire document relates to IANA numbering assignments.
 
-The IANA is requested to allocate a single dedicated block of IPv6 address space specifically for use in space environments.
+The IANA is requested to allocate a single dedicated block of IPv6 address space specifically for use in space environments. (**TBA (furry@): /3?**)
+The IANA is requested to suballocate /X (**we need to specify, I guess?) prefixes for the following celestial bodies:
 
-The NRO will determine how to allocate and assign addresses from this block in accordance with the aggregation principles outlined in this document. The exact prefix size of the space block is left to the IANA and the registry community to determine.
+* The moon and its environs.
+* Earth's Lagrange points
+
+When space communication is extended to other bodies not listed above, requests for sunsequent allocations will be made to the IANA.
+
+
+The NRO will determine how to allocate and assign addresses from those blocks in accordance with the aggregation principles outlined in this document.
 
 --- back
 
 # Acknowledgments
 {:numbered="false"}
 
-The authors would like to thank the members of the TIPTOP / Deep Space Working Group for their valuable discussions and contributions. We would also like to sincerely thank Kim Davies, John Curran, and Geoff Huston for their invaluable insights into IP address governance, registry operations, and historical allocation architectures.
+The authors would like to thank Alejandro Acosta, Marc Blanchet, Kasey Kierra, Michael Richardson and many other members of the TIPTOP working group
+for their feedback and suggestions on this document,
+and for their work on the broader topic of IP communication in space environments.
+In addition, the authors would sincerely like to thank Kim Davies, John Curran and Geoff Huston for helping us understand
+the history, complexity and sensitivities around IP address governance.
+We would also like to thank the members of the RIPE Address Policy Working Group for their feedback and suggestions
+on this topic.  One of the authors (Warren) has an awful memory for
+names and faces, and is embarrassed that he can't remember who all he spoke to about this topic, but he is grateful to everyone who
+provided feedback and suggestions - please drop me a note and I'll be happy to add you to this list.
+
