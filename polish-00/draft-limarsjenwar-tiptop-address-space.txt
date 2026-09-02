@@ -2,14 +2,14 @@
 
 
 
-TIPTOP Working Group                                         R. Atkinson
-Internet-Draft                                                          
+TIPTOP Working Group                                               T. Li
+Internet-Draft                                Hewlett Packard Enterprise
 Intended status: Standards Track                              M. Eubanks
 Expires: 6 March 2027                                  Space Initiatives
+                                                             R. Atkinson
+                                                                        
                                                                W. Kumari
                                                             Google, Inc.
-                                                                   T. Li
-                                              Hewlett Packard Enterprise
                                                               J. Linkova
                                                              Google, LLC
                                                         2 September 2026
@@ -281,8 +281,9 @@ Acknowledgments
 
 Authors' Addresses
 
-   Ran Atkinson
-   Email: rja.lists@gmail.com
+   Tony Li
+   Hewlett Packard Enterprise
+   Email: tony.li@tony.li
 
 
    Marshall Eubanks
@@ -290,14 +291,13 @@ Authors' Addresses
    Email: tme@space-initiatives.com
 
 
+   Ran Atkinson
+   Email: rja.lists@gmail.com
+
+
    Warren Kumari
    Google, Inc.
    Email: warren@kumari.net
-
-
-   Tony Li
-   Hewlett Packard Enterprise
-   Email: tony.li@tony.li
 
 
    Jen Linkova
