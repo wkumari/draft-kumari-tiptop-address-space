@@ -5,14 +5,14 @@
 TIPTOP Working Group                                               T. Li
 Internet-Draft                                Hewlett Packard Enterprise
 Intended status: Standards Track                              M. Eubanks
-Expires: 6 March 2027                                  Space Initiatives
+Expires: 7 March 2027                                  Space Initiatives
                                                              R. Atkinson
                                                                         
                                                                W. Kumari
                                                             Google, Inc.
                                                               J. Linkova
                                                              Google, LLC
-                                                        2 September 2026
+                                                        3 September 2026
 
 
                       IPv6 Address Space for Space
@@ -21,7 +21,7 @@ Expires: 6 March 2027                                  Space Initiatives
 Abstract
 
    IP communication in space environments is fundamentally different
-   from terrestrial communication; a primary difference is the
+   from terrestrial communication.  A primary difference is the high
    likelihood of long round-trip times, potentially minutes or even
    hours, depending on the distance between the endpoints.
 
@@ -31,7 +31,7 @@ Abstract
    taking place with a peer in a space environment and adjust their
    behavior accordingly.  Furthermore, without a structured address
    allocation plan, early space missions risk creating an unaggregated
-   patchwork of prefixes—repeating the historical operational scaling
+   patchwork of prefixes, repeating the historical operational scaling
    issues seen in terrestrial networks.
 
    This document requests that the IANA allocate a single dedicated
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 March 2027.
+   This Internet-Draft will expire on 7 March 2027.
 
 Copyright Notice
 
@@ -143,7 +143,7 @@ Table of Contents
    related address prefixes into a single, less-specific route
    advertisement.  Carrying fewer prefixes in routing and forwarding
    tables minimizes protocol overhead, conserves memory, and saves
-   router CPU cycles—all resources that are at a premium on spaceborne
+   router CPU cycles—all resources that are at a premium on space borne
    systems.
 
    To design an effective aggregation architecture, address plans must
@@ -157,7 +157,7 @@ Table of Contents
 
    Consequently, route aggregation is most naturally and effectively
    performed around celestial bodies.  Within the dedicated space
-   address block, dedicated blocks are suballocated for celestial
+   address block, dedicated blocks are sub-allocated for celestial
    bodies, as needed.  Address assignment policies MUST prioritize
    topological aggregation at the celestial body level, and, whenever
    possible, hierarchically below (e.g., local surface regions, orbital
@@ -175,7 +175,8 @@ Table of Contents
 
    1.  *IANA Allocation*: The IANA will allocate a single dedicated
        block of IPv6 address space for space environments.  The IANA
-       also manages suballocations for celestial bodies from that block.
+       also manages sub-allocations for celestial bodies from that
+       block.
 
    2.  *Registry Distribution*: The Number Resource Organization (NRO)
        will determine how to structure, assign, and distribute address
@@ -203,7 +204,7 @@ Table of Contents
    inherently introduce new security vulnerabilities to the IP
    architecture.  Additionally, some of existing routing security
    mechanisms might be unsuitable for space communications, while some
-   others (such as boundary filterings) are still applicable.  Exact
+   others (such as boundary filtering) are still applicable.  Exact
    security mechanisms applicable for space environments are outside of
    scope of this document.
 
@@ -221,7 +222,7 @@ Table of Contents
    *  Earth's Lagrange points
 
    When space communication is extended to other bodies not listed
-   above, requests for sunsequent allocations will be made to the IANA.
+   above, requests for subsequent allocations will be made to the IANA.
 
    The NRO will determine how to allocate and assign addresses from
    those blocks in accordance with the aggregation principles outlined

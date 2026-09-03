@@ -11,8 +11,8 @@
 <meta content="Warren Kumari" name="author">
 <meta content="Jen Linkova" name="author">
 <meta content="
-       IP communication in space environments is fundamentally different from terrestrial communication; a primary difference is the likelihood of long round-trip times, potentially minutes or even hours, depending on the distance between the endpoints. 
-       Existing protocols and IP stacks are largely designed for low-latency terrestrial environments and may fail (e.g., standard TCP handshakes timing out) unless they can readily identify that communication is taking place with a peer in a space environment and adjust their behavior accordingly. Furthermore, without a structured address allocation plan, early space missions risk creating an unaggregated patchwork of prefixes—repeating the historical operational scaling issues seen in terrestrial networks. 
+       IP communication in space environments is fundamentally different from terrestrial communication. A primary difference is the high likelihood of long round-trip times, potentially minutes or even hours, depending on the distance between the endpoints. 
+       Existing protocols and IP stacks are largely designed for low-latency terrestrial environments and may fail (e.g., standard TCP handshakes timing out) unless they can readily identify that communication is taking place with a peer in a space environment and adjust their behavior accordingly. Furthermore, without a structured address allocation plan, early space missions risk creating an unaggregated patchwork of prefixes, repeating the historical operational scaling issues seen in terrestrial networks. 
        This document requests that the IANA allocate a single dedicated block of IPv6 address space specifically for use in space environments and manages suballocations from that block for celestial bodies, as needed.
 The Number Resource Organization (NRO) will determine how to allocate and assign address resources from the celestial bodies blocks, with the understanding that topological address aggregation is critical for routing scalability and operational efficiency. 
     " name="description">
@@ -1056,7 +1056,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Li, et al.</td>
-<td class="center">Expires 6 March 2027</td>
+<td class="center">Expires 7 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1069,12 +1069,12 @@ svg {
 <dd class="internet-draft">draft-limarsjenwar-tiptop-address-space-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-02" class="published">2 September 2026</time>
+<time datetime="2026-09-03" class="published">3 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-06">6 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-07">7 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1102,8 +1102,8 @@ svg {
 <h1 id="title">IPv6 Address Space for Space</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">IP communication in space environments is fundamentally different from terrestrial communication; a primary difference is the likelihood of long round-trip times, potentially minutes or even hours, depending on the distance between the endpoints.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">Existing protocols and IP stacks are largely designed for low-latency terrestrial environments and may fail (e.g., standard TCP handshakes timing out) unless they can readily identify that communication is taking place with a peer in a space environment and adjust their behavior accordingly. Furthermore, without a structured address allocation plan, early space missions risk creating an unaggregated patchwork of prefixes—repeating the historical operational scaling issues seen in terrestrial networks.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">IP communication in space environments is fundamentally different from terrestrial communication. A primary difference is the high likelihood of long round-trip times, potentially minutes or even hours, depending on the distance between the endpoints.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">Existing protocols and IP stacks are largely designed for low-latency terrestrial environments and may fail (e.g., standard TCP handshakes timing out) unless they can readily identify that communication is taking place with a peer in a space environment and adjust their behavior accordingly. Furthermore, without a structured address allocation plan, early space missions risk creating an unaggregated patchwork of prefixes, repeating the historical operational scaling issues seen in terrestrial networks.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 <p id="section-abstract-3">This document requests that the IANA allocate a single dedicated block of IPv6 address space specifically for use in space environments and manages suballocations from that block for celestial bodies, as needed.
 The Number Resource Organization (NRO) will determine how to allocate and assign address resources from the celestial bodies blocks, with the understanding that topological address aggregation is critical for routing scalability and operational efficiency.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
 </section>
@@ -1126,7 +1126,7 @@ The Number Resource Organization (NRO) will determine how to allocate and assign
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 6 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 7 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1219,10 +1219,10 @@ The Number Resource Organization (NRO) will determine how to allocate and assign
       <h2 id="name-routing-scalability-and-top">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-routing-scalability-and-top" class="section-name selfRef">Routing Scalability and Topological Aggregation</a>
       </h2>
-<p id="section-3-1">Address aggregation allows the combining of multiple topologically related address prefixes into a single, less-specific route advertisement. Carrying fewer prefixes in routing and forwarding tables minimizes protocol overhead, conserves memory, and saves router CPU cycles—all resources that are at a premium on spaceborne systems.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">Address aggregation allows the combining of multiple topologically related address prefixes into a single, less-specific route advertisement. Carrying fewer prefixes in routing and forwarding tables minimizes protocol overhead, conserves memory, and saves router CPU cycles—all resources that are at a premium on space borne systems.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">To design an effective aggregation architecture, address plans must reflect the physical topology of the network. Terrestrial Internet topology shows dense connectivity on land masses where links are relatively inexpensive and simple to deploy, interconnected by a smaller number of long-distance transoceanic conduits. By analogy, communications infrastructure in space will exhibit high density within local environments (such as on and around individual celestial bodies) and far sparser links across interplanetary distances.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">Consequently, route aggregation is most naturally and effectively performed around celestial bodies.
-Within the dedicated space address block, dedicated blocks are suballocated for celestial bodies, as needed.
+Within the dedicated space address block, dedicated blocks are sub-allocated for celestial bodies, as needed.
 Address assignment policies MUST prioritize topological aggregation at the celestial body level, and, whenever possible, hierarchically below (e.g., local surface regions, orbital regimes, and localized operator constellations), ensuring that interplanetary transit gateways need only advertise and route coarse summary prefixes.<a href="#section-3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1235,7 +1235,7 @@ Address assignment policies MUST prioritize topological aggregation at the celes
 <p id="section-4-2">Under this model:<a href="#section-4-2" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-4-3">
 <li id="section-4-3.1">
-          <p id="section-4-3.1.1"><strong>IANA Allocation</strong>: The IANA will allocate a single dedicated block of IPv6 address space for space environments. The IANA also manages suballocations for celestial bodies from that block.<a href="#section-4-3.1.1" class="pilcrow">¶</a></p>
+          <p id="section-4-3.1.1"><strong>IANA Allocation</strong>: The IANA will allocate a single dedicated block of IPv6 address space for space environments. The IANA also manages sub-allocations for celestial bodies from that block.<a href="#section-4-3.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-4-3.2">
           <p id="section-4-3.2.1"><strong>Registry Distribution</strong>: The Number Resource Organization (NRO) will determine how to structure, assign, and distribute address blocks from the celestial bodies space allocations.<a href="#section-4-3.2.1" class="pilcrow">¶</a></p>
@@ -1254,7 +1254,7 @@ Address assignment policies MUST prioritize topological aggregation at the celes
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
 <p id="section-5-1">Assigning a dedicated IPv6 block for space environments does not inherently introduce new security vulnerabilities to the IP architecture.
-Additionally, some of existing routing security mechanisms might be unsuitable for space communications, while some others (such as boundary filterings) are still applicable.
+Additionally, some of existing routing security mechanisms might be unsuitable for space communications, while some others (such as boundary filtering) are still applicable.
 Exact security mechanisms applicable for space environments are outside of scope of this document.<a href="#section-5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1274,7 +1274,7 @@ The IANA is requested to suballocate /X (**we need to specify, I guess?) prefixe
           <p id="section-6-3.2.1">Earth's Lagrange points<a href="#section-6-3.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-6-4">When space communication is extended to other bodies not listed above, requests for sunsequent allocations will be made to the IANA.<a href="#section-6-4" class="pilcrow">¶</a></p>
+<p id="section-6-4">When space communication is extended to other bodies not listed above, requests for subsequent allocations will be made to the IANA.<a href="#section-6-4" class="pilcrow">¶</a></p>
 <p id="section-6-5">The NRO will determine how to allocate and assign addresses from those blocks in accordance with the aggregation principles outlined in this document.<a href="#section-6-5" class="pilcrow">¶</a></p>
 </section>
 </div>

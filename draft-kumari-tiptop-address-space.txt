@@ -5,8 +5,8 @@
 Taking IP To Other Planets                                     W. Kumari
 Internet-Draft                                              Google, Inc.
 Intended status: Informational                                J. Linkova
-Expires: 6 March 2027                                        Google, LLC
-                                                        2 September 2026
+Expires: 7 March 2027                                        Google, LLC
+                                                        3 September 2026
 
 
                         Address Space for Space
@@ -102,7 +102,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 March 2027.
+   This Internet-Draft will expire on 7 March 2027.
 
 Copyright Notice
 
