@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-01T00:41:21.408905+00:00",
+  "timestamp": "2026-09-03T00:35:45.599473+00:00",
   "repo": "wkumari/draft-kumari-tiptop-address-space",
   "labels": [
     {
@@ -50,5 +50,74 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOSlH0O88AAAABB96e2w",
+      "title": "Polishing -00",
+      "url": "https://github.com/wkumari/draft-kumari-tiptop-address-space/pull/1",
+      "state": "MERGED",
+      "author": "furry13",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "1. Coping the Ack section from our doc and rephrasing it slightly.\r\n2. Making per-body-aggregation explicit at the IANA level.\r\n3. Rephrasing Security Section (I have some reservation re: RPKI in space so let's keep it out of scope)",
+      "createdAt": "2026-09-02T21:53:01Z",
+      "updatedAt": "2026-09-02T22:01:57Z",
+      "baseRepository": "wkumari/draft-kumari-tiptop-address-space",
+      "baseRefName": "main",
+      "baseRefOid": "fbbbb1defbad505e1afa65bad3ac9d44e81858a0",
+      "headRepository": "wkumari/draft-kumari-tiptop-address-space",
+      "headRefName": "polish-00",
+      "headRefOid": "81e59a74d66055f3564613c1946e4681a1ce7ff6",
+      "closedAt": "2026-09-02T22:01:57Z",
+      "mergedAt": "2026-09-02T22:01:57Z",
+      "mergedBy": "furry13",
+      "mergeCommit": {
+        "oid": "4bd4b8de7cea3d9f1df6f38f8e8d5efd47046d98"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOSlH0O88AAAABL7f1Ng",
+          "commit": {
+            "abbreviatedOid": "1eef372"
+          },
+          "author": "wkumari",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "LGTM.",
+          "createdAt": "2026-09-02T21:59:56Z",
+          "updatedAt": "2026-09-02T21:59:56Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOSlH0O88AAAABB-nOgA",
+      "title": "Fix grammar and punctuation.",
+      "url": "https://github.com/wkumari/draft-kumari-tiptop-address-space/pull/2",
+      "state": "OPEN",
+      "author": "wkumari",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Minor grammar fixes.",
+      "createdAt": "2026-09-02T23:51:55Z",
+      "updatedAt": "2026-09-02T23:51:55Z",
+      "baseRepository": "wkumari/draft-kumari-tiptop-address-space",
+      "baseRefName": "main",
+      "baseRefOid": "4bd4b8de7cea3d9f1df6f38f8e8d5efd47046d98",
+      "headRepository": "wkumari/draft-kumari-tiptop-address-space",
+      "headRefName": "grammar_fix_1",
+      "headRefOid": "acbecaeb512b77002fbed5adb6f3a5ddda74d95c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
