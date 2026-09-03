@@ -56,9 +56,9 @@ informative:
 
 --- abstract
 
-IP communication in space environments is fundamentally different from terrestrial communication; a primary difference is the likelihood of long round-trip times, potentially minutes or even hours, depending on the distance between the endpoints.
+IP communication in space environments is fundamentally different from terrestrial communication. A primary difference is the high likelihood of long round-trip times, potentially minutes or even hours, depending on the distance between the endpoints.
 
-Existing protocols and IP stacks are largely designed for low-latency terrestrial environments and may fail (e.g., standard TCP handshakes timing out) unless they can readily identify that communication is taking place with a peer in a space environment and adjust their behavior accordingly. Furthermore, without a structured address allocation plan, early space missions risk creating an unaggregated patchwork of prefixes—repeating the historical operational scaling issues seen in terrestrial networks.
+Existing protocols and IP stacks are largely designed for low-latency terrestrial environments and may fail (e.g., standard TCP handshakes timing out) unless they can readily identify that communication is taking place with a peer in a space environment and adjust their behavior accordingly. Furthermore, without a structured address allocation plan, early space missions risk creating an unaggregated patchwork of prefixes, repeating the historical operational scaling issues seen in terrestrial networks.
 
 This document requests that the IANA allocate a single dedicated block of IPv6 address space specifically for use in space environments and manages suballocations from that block for celestial bodies, as needed.
 The Number Resource Organization (NRO) will determine how to allocate and assign address resources from the celestial bodies blocks, with the understanding that topological address aggregation is critical for routing scalability and operational efficiency.
@@ -83,12 +83,12 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 # Routing Scalability and Topological Aggregation
 
-Address aggregation allows the combining of multiple topologically related address prefixes into a single, less-specific route advertisement. Carrying fewer prefixes in routing and forwarding tables minimizes protocol overhead, conserves memory, and saves router CPU cycles—all resources that are at a premium on spaceborne systems.
+Address aggregation allows the combining of multiple topologically related address prefixes into a single, less-specific route advertisement. Carrying fewer prefixes in routing and forwarding tables minimizes protocol overhead, conserves memory, and saves router CPU cycles—all resources that are at a premium on space borne systems.
 
 To design an effective aggregation architecture, address plans must reflect the physical topology of the network. Terrestrial Internet topology shows dense connectivity on land masses where links are relatively inexpensive and simple to deploy, interconnected by a smaller number of long-distance transoceanic conduits. By analogy, communications infrastructure in space will exhibit high density within local environments (such as on and around individual celestial bodies) and far sparser links across interplanetary distances.
 
 Consequently, route aggregation is most naturally and effectively performed around celestial bodies.
-Within the dedicated space address block, dedicated blocks are suballocated for celestial bodies, as needed.
+Within the dedicated space address block, dedicated blocks are sub-allocated for celestial bodies, as needed.
 Address assignment policies MUST prioritize topological aggregation at the celestial body level, and, whenever possible, hierarchically below (e.g., local surface regions, orbital regimes, and localized operator constellations), ensuring that interplanetary transit gateways need only advertise and route coarse summary prefixes.
 
 # Address Administration and Allocation Model
@@ -97,7 +97,7 @@ Administration of space IPv6 resources should build upon the established princip
 
 Under this model:
 
-1. **IANA Allocation**: The IANA will allocate a single dedicated block of IPv6 address space for space environments. The IANA also manages suballocations for celestial bodies from that block.
+1. **IANA Allocation**: The IANA will allocate a single dedicated block of IPv6 address space for space environments. The IANA also manages sub-allocations for celestial bodies from that block.
 2. **Registry Distribution**: The Number Resource Organization (NRO) will determine how to structure, assign, and distribute address blocks from the celestial bodies space allocations.
 3. **Policy and Aggregation**: The registry system will establish allocation policies for space operators, network service providers, and research organizations, ensuring that address assignments preserve strict topological aggregation at the celestial body level and, whenever possible,  below.
 
@@ -108,7 +108,7 @@ Delegation of address space by the IANA is subject to standard stewardship princ
 # Security Considerations
 
 Assigning a dedicated IPv6 block for space environments does not inherently introduce new security vulnerabilities to the IP architecture.
-Additionally, some of existing routing security mechanisms might be unsuitable for space communications, while some others (such as boundary filterings) are still applicable.
+Additionally, some of existing routing security mechanisms might be unsuitable for space communications, while some others (such as boundary filtering) are still applicable.
 Exact security mechanisms applicable for space environments are outside of scope of this document.
 
 # IANA Considerations
@@ -121,7 +121,7 @@ The IANA is requested to suballocate /X (**we need to specify, I guess?) prefixe
 * The moon and its environs.
 * Earth's Lagrange points
 
-When space communication is extended to other bodies not listed above, requests for sunsequent allocations will be made to the IANA.
+When space communication is extended to other bodies not listed above, requests for subsequent allocations will be made to the IANA.
 
 
 The NRO will determine how to allocate and assign addresses from those blocks in accordance with the aggregation principles outlined in this document.
