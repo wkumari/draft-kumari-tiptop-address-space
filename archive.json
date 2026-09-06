@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-03T00:35:45.599473+00:00",
+  "timestamp": "2026-09-06T00:38:20.059515+00:00",
   "repo": "wkumari/draft-kumari-tiptop-address-space",
   "labels": [
     {
@@ -98,25 +98,35 @@
       "id": "PR_kwDOSlH0O88AAAABB-nOgA",
       "title": "Fix grammar and punctuation.",
       "url": "https://github.com/wkumari/draft-kumari-tiptop-address-space/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "wkumari",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Minor grammar fixes.",
       "createdAt": "2026-09-02T23:51:55Z",
-      "updatedAt": "2026-09-02T23:51:55Z",
+      "updatedAt": "2026-09-03T00:41:16Z",
       "baseRepository": "wkumari/draft-kumari-tiptop-address-space",
       "baseRefName": "main",
       "baseRefOid": "4bd4b8de7cea3d9f1df6f38f8e8d5efd47046d98",
       "headRepository": "wkumari/draft-kumari-tiptop-address-space",
       "headRefName": "grammar_fix_1",
       "headRefOid": "acbecaeb512b77002fbed5adb6f3a5ddda74d95c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2026-09-03T00:41:16Z",
+      "mergedAt": "2026-09-03T00:41:16Z",
+      "mergedBy": "furry13",
+      "mergeCommit": {
+        "oid": "e2fc7848578e625805db8fe59751d1ed0b558c0c"
+      },
+      "comments": [
+        {
+          "author": "furry13",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thank you!",
+          "createdAt": "2026-09-03T00:41:13Z",
+          "updatedAt": "2026-09-03T00:41:13Z"
+        }
+      ],
       "reviews": []
     }
   ]
