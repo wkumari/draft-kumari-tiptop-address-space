@@ -90,7 +90,7 @@ aggregation.
 Address aggregation {{RFC1518}} allows the combining of multiple topologically related address prefixes into a single, less-specific route advertisement. Carrying fewer prefixes in routing and forwarding tables minimizes protocol overhead, conserves memory, and saves router CPU cycles—all resources that are at a premium on space borne systems.
 
 To design an effective aggregation architecture, address plans must
-reflect the topology of the network.  Rehkter's Law tells us:
+reflect the topology of the network.  Rekhter's Law tells us:
 
 > "Addressing can follow topology or topology can follow
 > addressing. Choose one." {{RFC4984}}
