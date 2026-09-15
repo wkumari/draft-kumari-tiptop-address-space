@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-13T00:38:11.049133+00:00",
+  "timestamp": "2026-09-15T00:35:21.075262+00:00",
   "repo": "wkumari/draft-kumari-tiptop-address-space",
   "labels": [
     {
@@ -134,24 +134,26 @@
       "id": "PR_kwDOSlH0O88AAAABCxDSPg",
       "title": "Some major edits",
       "url": "https://github.com/wkumari/draft-kumari-tiptop-address-space/pull/3",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "tony1athome",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Added a bit of text about aggregation.\r\nFinessed a single block of address space for space.  We don't care, particularly.\r\nFinessed IPv6.  We don't care, particularly.\r\nAdded some acknowledgements.\r\n",
       "createdAt": "2026-09-09T02:58:08Z",
-      "updatedAt": "2026-09-12T06:05:46Z",
+      "updatedAt": "2026-09-14T15:44:22Z",
       "baseRepository": "wkumari/draft-kumari-tiptop-address-space",
       "baseRefName": "main",
       "baseRefOid": "e2fc7848578e625805db8fe59751d1ed0b558c0c",
       "headRepository": "tony1athome/draft-kumari-tiptop-address-space",
       "headRefName": "tli",
       "headRefOid": "d68ebc6eb8ac3e9dd3219e39d866c3f35a52e83a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-14T15:44:22Z",
+      "mergedAt": "2026-09-14T15:44:22Z",
+      "mergedBy": "wkumari",
+      "mergeCommit": {
+        "oid": "f323eb205fc320a3e2c4b6d11f9cf5ae28c0072e"
+      },
       "comments": [
         {
           "author": "tony1athome",
