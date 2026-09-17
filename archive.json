@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-15T00:35:21.075262+00:00",
+  "timestamp": "2026-09-17T00:33:32.771423+00:00",
   "repo": "wkumari/draft-kumari-tiptop-address-space",
   "labels": [
     {
@@ -49,7 +49,40 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 4,
+      "id": "I_kwDOSlH0O88AAAABRd_FfA",
+      "title": "Proxy for Stephen Farrell: Transit assignments",
+      "url": "https://github.com/wkumari/draft-kumari-tiptop-address-space/issues/4",
+      "state": "OPEN",
+      "author": "tony1athome",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Open issue: managing 'suballocations from that block for and\nwithin celestial bodies' may or may not turn out to be the main\nway to handle suballocations. Issues related to numbering for\nspacecraft that transit between bodies for example will need to\nbe considered by the WG.\n",
+      "createdAt": "2026-09-15T20:53:51Z",
+      "updatedAt": "2026-09-15T20:53:51Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOSlH0O88AAAABRnhxyA",
+      "title": "Proxy for Remco van Mook: Replacement text for section 3",
+      "url": "https://github.com/wkumari/draft-kumari-tiptop-address-space/issues/5",
+      "state": "OPEN",
+      "author": "tony1athome",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Proposed text for Section 3, replacing the aggregation MUST and the NRO clause:\n\n---\n\n3. Address structure\n\nThe address block is structured by this document rather than allocated on request.\n\n3.1 A fixed-width index in the prefix identifies the celestial body or dynamical point. The index is a registry of physical facts, one entry per body or point around which an orbit can be maintained, and listing is not an allocation. Every address at a body shares the body's prefix by construction; no assignment policy can produce an address at a body outside it.\n\n3.2 Elements not located at a body, like vessels in transfer or free-flying infrastructure, are addressed from a designated portion of the block that encodes trajectory rather than location. A spanning operator's mobile assets are therefore never numbered from any body's pool.\n\n3.3 Assignment below a body is per place of operation. No assignment spans bodies. An operator active at several bodies holds separate assignments under each body prefix.\n\n3.4 Registry functions within a body are confined to the listing and certification of assignments. Presence at a body does not depend on an assignment having been granted, and no registry action removes an element's ability to be addressed where it is.\n\n3.5 Earth orbit and cislunar space are within the structure even where they fall outside this working group's transport scope; the first deployments happen there.\n",
+      "createdAt": "2026-09-16T16:37:02Z",
+      "updatedAt": "2026-09-16T16:37:02Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
