@@ -113,7 +113,7 @@ Administration of address space resources should build upon the established prin
 
 Under this model:
 
-1. **IANA Allocation**: The IANA will allocate address space for space environments. 
+1. **IANA Allocation**: The IANA will allocate address space for space environments.
 2. **Registry Distribution**: The Number Resource Organization (NRO) will determine how to structure, assign, and distribute address blocks for and within celestial bodies.
 3. **Policy and Aggregation**: The registry system will establish allocation policies for space operators, network service providers, and research organizations, ensuring that address assignments preserve strict topological aggregation at the celestial body level and, whenever possible,  below.
 
@@ -150,11 +150,11 @@ Exact security mechanisms applicable for space environments are outside of scope
 
 This entire document relates to IANA numbering assignments.
 
-The IANA is requested to allocate address space specifically for use in space environments. 
+The IANA is requested to allocate address space specifically for use in space environments.
 The IANA is requested to allocate prefixes for the following celestial bodies:
 
-* The moon and its environs.
-* Earth's Lagrange points
+* The moon and its environs, including Earth-Moon Lagrange points 1 and 2.
+* The Earth-Sun Lagrange points 1 and 2 (the two closest to Earth).
 * Mars
 
 When space communication is extended to other bodies not listed above, IANA should make further allocations.
